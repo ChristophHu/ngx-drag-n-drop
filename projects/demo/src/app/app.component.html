@@ -8,3 +8,7 @@
   <span [hidden]="droppedData">Drop here</span>
   <span [hidden]="!droppedData">Item dropped here with data: "{{ droppedData }}"!</span>
 </div>
+<div drop (drop)="onDrop($event)" dragOverClass="drop-over-active" [validateDrop]="validateDrop" class="validate-drop">
+  <span [hidden]="droppedData2">Drop here2</span>
+  <span [hidden]="!droppedData2">Item dropped here with data2: "{{ droppedData2 }}"!</span>
+</div>

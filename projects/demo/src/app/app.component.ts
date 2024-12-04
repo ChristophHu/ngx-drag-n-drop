@@ -1,5 +1,5 @@
-import { Component, ElementRef, ViewChild } from '@angular/core';
-import { DragDirective, DropDirective, ValidateDrop } from '../../../ngx-drag-n-drop/src/public-api';
+import { Component, ElementRef, ViewChild } from '@angular/core'
+import { DragDirective, DropDirective, ValidateDrop } from '../../../ngx-drag-n-drop/src/public-api'
 
 @Component({
   selector: 'app-root',
@@ -12,19 +12,18 @@ import { DragDirective, DropDirective, ValidateDrop } from '../../../ngx-drag-n-
   styleUrl: './app.component.sass'
 })
 export class AppComponent {
-  // dropable
-  droppedData: string = '1';
-  droppedData2: string = '2';
+  droppedData: string = '1'
+  droppedData2: string = '2'
 
-  @ViewChild(DropDirective, { read: ElementRef, static: true })
-  dropableElement!: ElementRef;
+  @ViewChild(DropDirective, { read: ElementRef, static: true }) dropableElement!: ElementRef
 
   onDrop({ dropData }: any): void {
-    this.droppedData = dropData;
+    this.droppedData = dropData
     setTimeout(() => {
-      this.droppedData = '';
-    }, 2000);
+      this.droppedData = ''
+    }, 2000)
   }
 
-  validateDrop: ValidateDrop = ({ target }) => this.dropableElement.nativeElement.contains(target as Node);
+  // validateDrop: ValidateDrop = ({ target }) => this.dropableElement.nativeElement.contains(target as Node)
+  validateDrop: ValidateDrop = ({}) => false
 }
