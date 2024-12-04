@@ -6,7 +6,9 @@
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test",
+    "ngx:build": "ng build ngx-drag-n-drop",
+    "ngx:publish": "cd dist/ngx-drag-n-drop && npm publish --access public"
   },
   "private": true,
   "dependencies": {

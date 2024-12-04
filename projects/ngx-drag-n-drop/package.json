@@ -1,13 +1,33 @@
 {
-  "name": "ngx-drag-n-drop",
-  "version": "0.0.1",
+  "name": "@christophhu/ngx-drag-n-drop",
+  "version": "1.0.0",
+  "description": "Angular Drag'n'Drop lib.",
+  "license": "MIT",
+  "author": {
+    "name": "Christoph Huschenhoefer",
+    "email": "christoph@nxt.codes"
+  },
+  "keywords": [
+    "angular",
+    "drag'n'drop"
+  ],
   "peerDependencies": {
     "@angular/common": "^17.3.0",
     "@angular/core": "^17.3.0"
   },
   "dependencies": {
-    "@christophhu/dom-autoscroller": "^2.4.2",
     "tslib": "^2.3.0"
   },
+  "devDependencies": {
+    "@christophhu/dom-autoscroller": "^2.4.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ChristophHu/ngx-drag-n-drop.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ChristophHu/ngx-drag-n-drop/issues"
+  },
+  "homepage": "https://github.com/ChristophHu/ngx-drag-n-drop#readme",
   "sideEffects": false
 }
