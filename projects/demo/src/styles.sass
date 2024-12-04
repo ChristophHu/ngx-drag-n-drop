@@ -1,0 +1,85 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import 'tailwindcss/base'
+@import 'tailwindcss/components'
+@import 'tailwindcss/utilities'
+
+@layer base
+    :root
+        // menu
+        --menu          : rgb(21, 21, 23)
+        --menu-light    : rgb(240, 240, 240)
+        --menu-dark     : rgb(174, 174, 174)
+
+        // backgrounds
+        --primary       : rgb(240, 240, 240)
+        --secondary     : rgb(225, 225, 225)
+        --tertiary      : rgb(252, 252, 252)
+        --accent        : rgb(37, 99, 235)
+        --accent-lighter : rgb(58, 115, 238)
+
+        // border
+        --borderline    : rgb(210, 210, 210)
+
+        // text
+        --light         : rgb(240, 240, 240)
+        --lighter       : rgb(220, 220, 220)
+        --dark          : rgb(41, 41, 43)
+        --darker        : rgb(21, 21, 23)
+        --placeholder   : rgb(174, 174, 174)
+        --disabled      : rgb(174, 174, 174)
+        --static-gray   : rgb(141, 141, 141)
+
+        // input
+        --label         : rgb(96, 96, 96)
+        --input         : rgb(240, 240, 240)
+        --icon          : rgb(141, 141, 141)
+
+    .dark
+        // menu
+        --menu          : rgb(21, 21, 23)
+        --menu-light    : rgb(240, 240, 240)
+        --menu-dark     : rgb(174, 174, 174)
+
+        // backgrounds   
+        --primary       : rgb(21, 21, 23)
+        --secondary     : rgb(40, 40, 40)
+        --tertiary      : rgb(32, 32, 32)
+        --accent        : rgb(37, 99, 235)
+        --accent-lighter : rgb(58, 115, 238)
+
+        // border
+        --borderline    : rgb(56, 56, 56)
+
+        // text
+        --darker        : rgb(240, 240, 240)
+        --dark          : rgb(200, 200, 200)
+        --lighter       : rgb(21, 21, 23)
+        --light         : rgb(41, 41, 43)
+        --placeholder   : rgb(141, 141, 141)
+        --disabled      : rgb(141, 141, 141)
+        --static-gray   : rgb(141, 141, 141)
+
+        // input
+        --label         : rgb(140, 140, 140)
+        --input         : rgb(40, 40, 40)
+        --icon          : rgb(141, 141, 141)
+*
+    -webkit-user-select: none
+    -khtml-user-select: none
+    -moz-user-select: none
+    -ms-user-select: none
+    user-select: none
+
+.scrollbar-hide
+    -ms-overflow-style: none
+    scrollbar-width: none
+    overflow-y: scroll
+
+    &::-webkit-scrollbar
+        display: none
+        width: 0
+        height: 0
+        
+body
+    @apply bg-secondary text-dark

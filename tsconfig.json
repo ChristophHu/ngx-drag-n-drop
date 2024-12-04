@@ -9,6 +9,11 @@
     "noImplicitReturns": true,
     "noFallthroughCasesInSwitch": true,
     "skipLibCheck": true,
+    "paths": {
+      "ngx-drag-n-drop": [
+        "./dist/ngx-drag-n-drop"
+      ]
+    },
     "esModuleInterop": true,
     "sourceMap": true,
     "declaration": false,
