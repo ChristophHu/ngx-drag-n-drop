@@ -28,7 +28,7 @@ export interface ValidateDropParams extends DropEvent {}
 export type ValidateDrop = (params: ValidateDropParams) => boolean
 
 @Directive({
-  selector: '[drop]',
+  selector: '[Dropable]',
   standalone: true
 })
 export class DropDirective implements OnInit, OnDestroy {

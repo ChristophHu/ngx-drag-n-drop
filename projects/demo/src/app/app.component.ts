@@ -12,10 +12,10 @@ import { DragDirective, DropDirective, ValidateDrop } from '../../../ngx-drag-n-
   styleUrl: './app.component.sass'
 })
 export class AppComponent {
-  droppedData: string = '1'
-  droppedData2: string = '2'
-
   @ViewChild(DropDirective, { read: ElementRef, static: true }) dropableElement!: ElementRef
+
+  droppedData: string = '1'
+  droppedData2: string = '2'  
 
   onDrop({ dropData }: any): void {
     this.droppedData = dropData

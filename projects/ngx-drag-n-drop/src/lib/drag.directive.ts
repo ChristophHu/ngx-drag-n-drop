@@ -65,7 +65,7 @@ export interface GhostElementCreatedEvent {
 }
 
 @Directive({
-  selector: '[drag]',
+  selector: '[Dragable]',
   standalone: true
 })
 export class DragDirective {

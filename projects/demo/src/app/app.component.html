@@ -1,14 +1,13 @@
-<div drag dropData="foo" dragActiveClass="drag-active" [touchStartLongPress]="{ delay: 300, delta: 30 }">
+<div Dragable dropData="foo" dragActiveClass="drag-active" [dragAxis]="{y: true, x: true}" [touchStartLongPress]="{ delay: 300, delta: 30 }">
   Drag me!
 </div>
-<div drag dropData="bar" dragActiveClass="drag-active" [dragSnapGrid]="{ x: 20, y: 20 }" [touchStartLongPress]="{ delay: 300, delta: 30 }">
-  I snap to a 10 x 10 grid
+<div Dragable dropData="bar" dragActiveClass="drag-active" [dragSnapGrid]="{ x: 20, y: 20 }" [touchStartLongPress]="{ delay: 300, delta: 30 }">
+  I snap to a 20 x 20 grid
 </div>
-<div drop (drop)="onDrop($event)" dragOverClass="drop-over-active">
+<div Dropable (drop)="onDrop($event)" dragOverClass="drop-over-active">
   <span [hidden]="droppedData">Drop here</span>
   <span [hidden]="!droppedData">Item dropped here with data: "{{ droppedData }}"!</span>
 </div>
-<div drop (drop)="onDrop($event)" dragOverClass="drop-over-active" [validateDrop]="validateDrop" class="validate-drop">
-  <span [hidden]="droppedData2">Drop here2</span>
-  <span [hidden]="!droppedData2">Item dropped here with data2: "{{ droppedData2 }}"!</span>
+<div Dropable (drop)="onDrop($event)" dragOverClass="drop-over-active" [validateDrop]="validateDrop" class="validate-drop">
+  <span>Drop here2</span>
 </div>

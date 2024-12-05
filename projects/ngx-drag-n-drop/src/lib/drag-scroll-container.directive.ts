@@ -1,7 +1,7 @@
 import { Directive, ElementRef } from '@angular/core'
 
 @Directive({
-  selector: '[dragScrollContainer]',
+  selector: '[DragScrollContainer]',
   standalone: true
 })
 export class DragScrollContainerDirective {
