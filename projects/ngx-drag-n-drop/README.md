@@ -78,62 +78,27 @@ export class Component {
 
 Add the styles in the SASS file:
 ```scss
-:host 
-  display: flex
+:host
+  @apply flex
 
-[Dragable] 
-  background-color: red
-  width: 200px
-  height: 200px
-  position: relative
-  z-index: 2
-  float: left
-  margin-right: 10px
-  cursor: move
+[Dragable]
+  @apply relative h-40 w-40 mr-4 bg-accent rounded-lg z-10 cursor-move
 
-[Dropable] 
-  background-color: green
-  width: 400px
-  height: 400px
-  z-index: 1
-  position: relative
-  top: 50px
-  left: 100px
+[Dropable]
+  @apply relative h-64 w-64 bg-accent_darker opacity-50 rounded-lg z-20
 
-.validate-drop 
-  left: 150px
+.validate-drop
+  @apply ml-4
 
 [Dragable],
-[Dropable] 
-  color: white
-  text-align: center
-  display: flex
-  align-items: center
-  justify-content: center
+[Dropable]
+  @apply flex text-dark text-center items-center justify-center
 
-.drop-over-active 
-  border: dashed 1px black
-  background-color: lightgreen
+.drop-over-active
+  @apply bg-accent_lighter
 
-.drag-active 
-  z-index: 3
-
-.floating-toolbar 
-  position: absolute
-  top: 140px
-  z-index: 2
-  width: 250px
-  height: 75px
-  background: yellow
-  display: flex
-  align-items: center
-  justify-content: center
-
-.floating-toolbar-1
-  left: 600px
-
-.floating-toolbar-2
-  left: 1050px
+.drag-active
+  @apply z-40
 ```
 
 ## License
