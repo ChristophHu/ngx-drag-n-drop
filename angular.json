@@ -95,6 +95,10 @@
             ],
             "scripts": []
           }
+        },
+        "deploy": {
+          "builder": "angular-cli-ghpages:deploy",
+          "dir": "dist/github-pages-demo/browser"
         }
       }
     },
