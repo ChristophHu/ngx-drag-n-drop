@@ -1,29 +1,47 @@
-import { Component, ElementRef, ViewChild } from '@angular/core'
-import { DragDirective, DropDirective, ValidateDrop } from '../../../ngx-drag-n-drop/src/public-api'
+import { AsyncPipe, CommonModule } from '@angular/common';
+import { Component } from '@angular/core';
+import { RouterModule } from '@angular/router';
+import { IconsComponent } from './shared/components/icons/icons.component';
+import { GithubService } from './core/services/github.service';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-root',
-  standalone: true,
   imports: [
-    DragDirective,
-    DropDirective
+    AsyncPipe,
+    CommonModule,
+    IconsComponent,
+    // JsonPipe,
+    RouterModule
+  ],
+  providers: [
+    GithubService
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.sass'
 })
 export class AppComponent {
-  @ViewChild(DropDirective, { read: ElementRef, static: true }) dropableElement!: ElementRef
+  repos$: Observable<any>
+  this_repo$: Observable<any>
+  user$: Observable<any>
 
-  droppedData: string = '1'
-  droppedData2: string = '2'  
+  show_settings: boolean = false
+  name: string = ''
+  version: string = '0.0.1'
+  
+  constructor(private githubService: GithubService) {
+    this.repos$ = this.githubService.repos$
+    this.this_repo$ = this.githubService.this_repo$
+    this.user$ = this.githubService.user$
 
-  onDrop({ dropData }: any): void {
-    this.droppedData = dropData
-    setTimeout(() => {
-      this.droppedData = ''
-    }, 2000)
+    this.name = this.githubService.getThisRepo()
+    this.version = this.githubService.getVersion()
   }
 
-  // validateDrop: ValidateDrop = ({ target }) => this.dropableElement.nativeElement.contains(target as Node)
-  validateDrop: ValidateDrop = ({}) => false
+  toggleSettings() {
+    this.show_settings = !this.show_settings
+  }
+  toggleTheme() {
+    this.toggleSettings()
+  }
 }

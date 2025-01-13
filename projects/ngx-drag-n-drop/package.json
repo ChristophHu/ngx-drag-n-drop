@@ -1,6 +1,6 @@
 {
   "name": "@christophhu/ngx-drag-n-drop",
-  "version": "1.0.1",
+  "version": "19.0.0",
   "description": "Angular Drag'n'Drop lib.",
   "license": "MIT",
   "author": {
@@ -12,8 +12,8 @@
     "drag'n'drop"
   ],
   "peerDependencies": {
-    "@angular/common": "^17.3.0",
-    "@angular/core": "^17.3.0"
+    "@angular/common": "^19.0.0",
+    "@angular/core": "^19.0.0"
   },
   "dependencies": {
     "tslib": "^2.3.0"

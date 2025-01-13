@@ -1,13 +1,118 @@
-<div Dragable dropData="foo" dragActiveClass="drag-active" [dragAxis]="{y: true, x: true}" [touchStartLongPress]="{ delay: 300, delta: 30 }">
-  Drag me!
-</div>
-<div Dragable dropData="bar" dragActiveClass="drag-active" [dragSnapGrid]="{ x: 20, y: 20 }" [touchStartLongPress]="{ delay: 300, delta: 30 }">
-  I snap to a 20 x 20 grid
-</div>
-<div Dropable (drop)="onDrop($event)" dragOverClass="drop-over-active">
-  <span [hidden]="droppedData">Drop here</span>
-  <span [hidden]="!droppedData">Item dropped here with data: "{{ droppedData }}"!</span>
-</div>
-<div Dropable (drop)="onDrop($event)" dragOverClass="drop-over-active" [validateDrop]="validateDrop" class="validate-drop">
-  <span>Drop here2</span>
+<div class="absolute inset-0 scrollbar-hide">
+  <div class="container mx-auto flex flex-col text-dark" *ngIf="this_repo$ | async as repo">
+    <header class="flex flex-row mt-4 justify-between">
+      <div class="flex w-72 items-end">
+        <ul class="relative w-full list-none">
+          <li class="inline-block cursor-pointer w-1/2" routerLink="/" routerLinkActive="active">
+            <a class="flex items-center">
+              <div class="h-4 w-4 mt-1 mx-2">
+                <icons name="eye"></icons>
+              </div>
+              <span>overview</span>
+            </a>
+          </li>
+          <li class="two inline-block cursor-pointer w-1/2" routerLink="/readme" routerLinkActive="active">
+            <a class="flex items-center">
+              <div class="h-4 w-4 mt-1 mx-2">
+                <icons name="file-text"></icons>
+              </div>
+              <span>readme</span>
+            </a>
+          </li>
+          <hr class="absolute h-0.5 w-1/2 bg-accent border-0 duration-300 ease-in-out">
+        </ul>
+      </div>
+      <div class="grow flex flex-row ml-8 justify-between">
+        <h1 class="font-semibold">{{ name }} <span class="text-sm text-gray-500 font-medium">(Vers. {{ version }})</span></h1>
+        <div class="relative inline-block text-left">
+          <div class="h-6 w-6 stroke-2 cursor-pointer" (click)="toggleSettings()">
+            <icons name="settings"></icons>
+          </div>
+        
+          <div *ngIf="show_settings" class="absolute right-0 z-10 mt-1 w-56 origin-top-right rounded-md bg-secondary">
+            <div>
+              <button class="block px-4 py-2 text-sm text-dark hover:text-darker" (click)="toggleTheme()">change theme</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <hr class="h-px mb-4 border-none bg-borderline">
+    <div class="flex flex-col lg:flex-row" *ngIf="user$ | async as user">
+      <div class="flex-none flex flex-row lg:flex-col w-72">
+          <!-- <img src="https://placehold.co/600" alt="img" class="h-72 w-72 border border-borderline rounded-full"> -->
+          <img [src]="user?.data?.avatar_url" class="h-72 w-72 border border-borderline rounded-full">
+        <span class="sr-only">Profile</span>
+        <div class="flex flex-col mt-2 ml-4 lg:ml-0">
+          <div class="w-full text-dark items-center">
+            <h2 class="text-2xl text-darker font-bold">{{ user?.data?.name }}</h2>
+            <div class="flex flex-row">
+              <span>ChristophHu</span>
+              <div class="h-5 w-5 -m-1">
+                <icons name="dot"></icons>
+              </div>
+              <span>he/him</span>
+            </div>
+          </div>
+          <a [href]="'https://github.com/' + user.data?.login" class="w-full my-4 p-1 bg-secondary border border-borderline text-center text-darker text-sm font-bold rounded-lg cursor-pointer">profile</a>
+          <span class="sr-only">profile stats</span>
+          <div class="flex flex-row text-sm">
+            <div class="flex items-center">
+              <div class="h-4 w-4">
+                <icons name="users"></icons>
+              </div>
+              <span class="ml-1 text-darker font-bold">{{ user.data?.followers }}</span>
+              <span class="ml-1">followers</span>
+            </div>
+            <div class="h-5 w-5 -m-1">
+              <icons name="dot"></icons>
+            </div>
+            <div class="flex items-center">
+              <span class="ml-1 text-darker font-bold">{{ user.data?.following }}</span>
+              <span class="ml-1">following</span>
+            </div>
+          </div>
+          <div class="flex flex-row text-sm">
+            <div class="flex items-center">
+              <div class="h-4 w-4">
+                <icons name="notebook"></icons>
+              </div>
+              <div class="flex items-center">
+                <span class="ml-1 text-darker font-bold">{{ user.data?.public_repos }}</span>
+                <span class="ml-1">public repositories</span>
+              </div>
+            </div>
+          </div>
+          <a [href]="'https://github.com/' + user.data?.login + '/' + repo.data?.name" class="w-full my-4 p-1 bg-secondary border border-borderline text-center text-darker text-sm font-bold rounded-lg cursor-pointer">repository</a>
+          <div class="flex flex-row text-sm">
+            <div class="flex items-center">
+              <div class="h-4 w-4">
+                <icons name="git_fork"></icons>
+              </div>
+              <div class="flex items-center">
+                <span class="ml-1 text-darker font-bold">{{ repo.data?.forks }}</span>
+                <span class="ml-1">forks</span>
+              </div>
+            </div>
+          </div>
+          <div class="flex flex-row text-sm">
+            <div class="flex items-center">
+              <div class="h-4 w-4">
+                <icons name="star"></icons>
+              </div>
+              <div class="flex items-center">
+                <span class="ml-1 text-darker font-bold">{{ repo.data?.stargazers_count }}</span>
+                <span class="ml-1">stars</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="relative grow min-h-96 ml-0 lg:ml-4 mt-4 lg:mt-0 p-4 border border-borderline rounded-lg scrollbar-hide">
+        <router-outlet></router-outlet>
+      </div>
+    </div>
+  </div>
+  <!-- <pre>{{ user$ | async | json }}</pre> -->
+  <!-- <pre>{{ this_repo$ | async | json }}</pre> -->
 </div>

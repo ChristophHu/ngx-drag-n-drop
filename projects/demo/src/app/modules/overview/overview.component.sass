@@ -1,0 +1,21 @@
+:host
+    @apply flex
+
+[Dragable]
+    @apply relative h-40 w-40 mr-4 bg-accent rounded-lg z-10 cursor-move
+
+[Dropable]
+    @apply relative h-64 w-64 bg-accent_darker opacity-50 rounded-lg z-20
+
+.validate-drop
+    @apply ml-4
+
+[Dragable],
+[Dropable]
+    @apply flex text-dark text-center items-center justify-center
+
+.drop-over-active
+    @apply bg-accent_lighter
+
+.drag-active
+    @apply z-40

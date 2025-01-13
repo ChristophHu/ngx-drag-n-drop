@@ -1,22 +1,22 @@
 /* You can add global styles to this file, and also import other style files */
 
-@import 'tailwindcss/base'
-@import 'tailwindcss/components'
-@import 'tailwindcss/utilities'
+@tailwind base
+@tailwind components
+@tailwind utilities
+
+@layer base
+    h1
+        @apply text-5xl
 
 @layer base
     :root
-        // menu
-        --menu          : rgb(21, 21, 23)
-        --menu-light    : rgb(240, 240, 240)
-        --menu-dark     : rgb(174, 174, 174)
-
         // backgrounds
         --primary       : rgb(240, 240, 240)
         --secondary     : rgb(225, 225, 225)
         --tertiary      : rgb(252, 252, 252)
         --accent        : rgb(37, 99, 235)
-        --accent-lighter : rgb(58, 115, 238)
+        --accent-lighter : rgb(35, 60, 116)
+        --accent-darker : rgb(58, 115, 238)
 
         // border
         --borderline    : rgb(210, 210, 210)
@@ -36,20 +36,16 @@
         --icon          : rgb(141, 141, 141)
 
     .dark
-        // menu
-        --menu          : rgb(21, 21, 23)
-        --menu-light    : rgb(240, 240, 240)
-        --menu-dark     : rgb(174, 174, 174)
-
         // backgrounds   
-        --primary       : rgb(21, 21, 23)
-        --secondary     : rgb(40, 40, 40)
+        --primary       : rgb(13, 17, 22)
+        --secondary     : rgb(32, 41, 48)
         --tertiary      : rgb(32, 32, 32)
         --accent        : rgb(37, 99, 235)
         --accent-lighter : rgb(58, 115, 238)
+        --accent-darker : rgb(35, 60, 116)
 
         // border
-        --borderline    : rgb(56, 56, 56)
+        --borderline    : rgb(58, 65, 72)
 
         // text
         --darker        : rgb(240, 240, 240)
@@ -64,12 +60,16 @@
         --label         : rgb(140, 140, 140)
         --input         : rgb(40, 40, 40)
         --icon          : rgb(141, 141, 141)
+
 *
     -webkit-user-select: none
     -khtml-user-select: none
     -moz-user-select: none
     -ms-user-select: none
     user-select: none
+
+body
+    @apply bg-primary text-dark
 
 .scrollbar-hide
     -ms-overflow-style: none
@@ -80,6 +80,3 @@
         display: none
         width: 0
         height: 0
-        
-body
-    @apply bg-secondary text-dark

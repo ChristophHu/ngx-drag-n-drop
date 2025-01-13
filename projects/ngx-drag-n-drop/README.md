@@ -1,12 +1,31 @@
-# Dynamic Table
-
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.0.
+# ngx-drag-n-drop
 
 ## Demo
+<p align="center">
+  <a href="https://christophhu.github.io/ngx-drag-n-drop"><img src="https://github.com/ChristophHu/ChristophHu/blob/main/assets/img/ngx-drag-n-drop.png" width="500" alt="image" /></a>
+</p>
 
-[Demo](https://christophhu.github.io/ngx-drag-n-drop/)
+## Description
+This repository is a demo application built with Angular 19, showcasing the drag-n-drop library. The library is a simple and lightweight Angular directive that allows you to drag and drop elements in your application. The library is easy to use and can be customized to fit your needs. The library is built with Angular 19 and uses TypeScript for the logic. The library is open-source and free to use in your projects.
 
-## Use
+## Frameworks and Languages
+<p align="left">
+  <img alt="Static Badge" src="https://img.shields.io/badge/Angular-000000.svg?style=for-the-badge&logo=angular&logoColor=white&labelColor=000000&color=000000">
+  <img alt="Static Badge" src="https://img.shields.io/badge/HTML5-000000.svg?style=for-the-badge&logo=html5&logoColor=white&labelColor=E34F26&color=000000">
+  <img alt="Static Badge" src="https://img.shields.io/badge/SASS-000000.svg?style=for-the-badge&logo=sass&logoColor=white&labelColor=CC6699&color=000000">
+  <img alt="Static Badge" src="https://img.shields.io/badge/tailwindcss-000000?style=for-the-badge&logo=tailwindcss&logoColor=white&labelColor=06B6D4&color=000000">
+  <img alt="Static Badge" src="https://img.shields.io/badge/TypeScript-000000.svg?style=for-the-badge&logo=typescript&logoColor=white&labelColor=007ACC&color=000000">
+</p>
+
+## Installation
+To run this project, you need to have Node.js installed on your machine. Clone the repository and run the following commands:
+
+```bash
+npm install @christophhu/ngx-drag-n-drop
+```
+
+## Usage
+In the View, add the following code:
 ```html
 <div Dragable dropData="foo" dragActiveClass="drag-active" [dragAxis]="{y: true, x: true}" [touchStartLongPress]="{ delay: 300, delta: 30 }">
   Drag me!
@@ -23,6 +42,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 </div>
 ```
 
+Import the library in the module and add some logic in the component:
 ```typescript
 import { Component, ElementRef, ViewChild } from '@angular/core'
 import { DragDirective, DropDirective, ValidateDrop } from '@christophhu/ngx-drag-n-drop'
@@ -56,7 +76,8 @@ export class Component {
 }
 ```
 
-```sass
+Add the styles in the SASS file:
+```scss
 :host 
   display: flex
 
@@ -114,3 +135,15 @@ export class Component {
 .floating-toolbar-2
   left: 1050px
 ```
+
+## License
+This project is licensed under the MIT License.
+
+The MIT License (MIT)
+Copyright © 2024 <copyright holders>
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the “Software”), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.

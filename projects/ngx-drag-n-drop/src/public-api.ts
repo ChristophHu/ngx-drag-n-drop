@@ -2,6 +2,8 @@
  * Public API Surface of ngx-drag-n-drop
  */
 
-export { DropEvent, ValidateDrop, ValidateDropParams, DropDirective } from './lib/drop.directive'
-export { DragPointerDownEvent, DragStartEvent, DragMoveEvent, DragEndEvent, GhostElementCreatedEvent, ValidateDrag, ValidateDragParams, DragDirective } from './lib/drag.directive';
+export type { DropEvent, ValidateDrop, ValidateDropParams } from './lib/drop.directive'
+export { DragDirective } from './lib/drag.directive'
+export type  { DragPointerDownEvent, DragStartEvent, DragMoveEvent, DragEndEvent, GhostElementCreatedEvent, ValidateDrag, ValidateDragParams } from './lib/drag.directive';
+export { DropDirective } from './lib/drop.directive';
 export { DragScrollContainerDirective } from './lib/drag-scroll-container.directive';
