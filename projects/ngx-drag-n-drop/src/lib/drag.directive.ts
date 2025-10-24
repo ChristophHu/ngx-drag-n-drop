@@ -1,7 +1,7 @@
-import { Directive, ElementRef, EventEmitter, Inject, Input, NgZone, Optional, Output, Renderer2, SimpleChanges, TemplateRef, ViewContainerRef } from '@angular/core'
+import { Directive, ElementRef, EventEmitter, Inject, Input, NgZone, Optional, Output, Renderer2, SimpleChanges, TemplateRef, ViewContainerRef, DOCUMENT } from '@angular/core'
 import { combineLatest, count, filter, fromEvent, map, merge, mergeMap, Observable, pairwise, ReplaySubject, share, startWith, Subject, take, takeLast, takeUntil } from 'rxjs'
 import { DragScrollContainerDirective } from './drag-scroll-container.directive'
-import { DOCUMENT } from '@angular/common'
+
 import { CurrentDragData, DragHelper } from './drag-helper.provider'
 import { addClass, removeClass } from './util'
 // @ts-ignore
