@@ -6,15 +6,13 @@
 </p>
 
 ## Description
-This repository is a demo application built with Angular 19, showcasing the drag-n-drop library. The library is a simple and lightweight Angular directive that allows you to drag and drop elements in your application. The library is easy to use and can be customized to fit your needs. The library is built with Angular 19 and uses TypeScript for the logic. The library is open-source and free to use in your projects.
+This repository is a demo application built with Angular 20, showcasing the drag-n-drop library. The library is a simple and lightweight Angular directive that allows you to drag and drop elements in your application. The library is easy to use and can be customized to fit your needs. The library is open-source and free to use in your projects.
 
 ## Frameworks and Languages
 <p align="left">
-  <img alt="Static Badge" src="https://img.shields.io/badge/Angular-000000.svg?style=for-the-badge&logo=angular&logoColor=white&labelColor=000000&color=000000">
-  <img alt="Static Badge" src="https://img.shields.io/badge/HTML5-000000.svg?style=for-the-badge&logo=html5&logoColor=white&labelColor=E34F26&color=000000">
-  <img alt="Static Badge" src="https://img.shields.io/badge/SASS-000000.svg?style=for-the-badge&logo=sass&logoColor=white&labelColor=CC6699&color=000000">
-  <img alt="Static Badge" src="https://img.shields.io/badge/tailwindcss-000000?style=for-the-badge&logo=tailwindcss&logoColor=white&labelColor=06B6D4&color=000000">
-  <img alt="Static Badge" src="https://img.shields.io/badge/TypeScript-000000.svg?style=for-the-badge&logo=typescript&logoColor=white&labelColor=007ACC&color=000000">
+    <img alt="Static Badge" src="https://img.shields.io/badge/20.3.7-000000?style=for-the-badge&logo=angular&logoColor=white&label=Angular&labelColor=000000"><br>
+  <img alt="Static Badge" src="https://img.shields.io/badge/3.4.17-000000?style=for-the-badge&logo=tailwindcss&logoColor=white&label=Tailwind&labelColor=06B6D4&color=000000"><br>
+  <img alt="Static Badge" src="https://img.shields.io/badge/5.9.3-000000?style=for-the-badge&logo=typescript&logoColor=white&label=Typescript&labelColor=007ACC&color=000000">
 </p>
 
 ## Installation
